@@ -1,4 +1,4 @@
-# spotify_sdk
+# spotify_sdk [expansion]
 
 [![pub package](https://img.shields.io/badge/pub-2.1.0-orange)](https://pub.dev/packages/spotify_sdk)
 [![build](https://github.com/brim-borium/spotify_sdk/workflows/spotify_sdk/badge.svg?branch=master)](https://github.com/brim-borium/spotify_sdk/actions?query=workflow%3Aspotify_sdk)
