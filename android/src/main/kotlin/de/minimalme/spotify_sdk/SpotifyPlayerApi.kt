@@ -62,8 +62,10 @@ class SpotifyPlayerApi(spotifyAppRemote: SpotifyAppRemote?, result: MethodChanne
     }
 
     internal fun play(spotifyUri: String?) {
+        val streamType = PlayerApi.StreamType.values()[0]
+
         if (playerApi != null && !spotifyUri.isNullOrBlank()) {
-            playerApi.play(spotifyUri)
+            playerApi.play(spotifyUri, streamType)
                     .setResultCallback { result.success(true) }
                     .setErrorCallback { throwable -> result.error(errorPlay, "error when playing uri: $spotifyUri", throwable.toString()) }
         } else if (spotifyUri.isNullOrBlank()) {
