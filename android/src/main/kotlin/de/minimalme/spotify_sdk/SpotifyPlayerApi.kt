@@ -1,6 +1,7 @@
 package de.minimalme.spotify_sdk
 
 import com.google.gson.Gson
+import com.spotify.android.appremote.api.PlayerApi
 import com.spotify.android.appremote.api.SpotifyAppRemote
 import com.spotify.protocol.types.PlaybackSpeed
 import io.flutter.plugin.common.MethodChannel
@@ -65,7 +66,7 @@ class SpotifyPlayerApi(spotifyAppRemote: SpotifyAppRemote?, result: MethodChanne
         if (playerApi != null && !spotifyUri.isNullOrBlank()) {
 
             val streamType = PlayerApi.StreamType.values()[0]
-            
+
             playerApi.play(spotifyUri, streamType)
                     .setResultCallback { result.success(true) }
                     .setErrorCallback { throwable -> result.error(errorPlay, "error when playing uri: $spotifyUri", throwable.toString()) }
